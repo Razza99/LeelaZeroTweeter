@@ -62,7 +62,7 @@ def tweeter():
         tweet = 'LeelaZ - New strongest: ' + info_winloss +'\nhash: ' + curr_strongest +' ('+info_steps+')\nSee zero.sjeng.org'
 
         print(tweet)
-        #api.update_status(status=tweet)
+        api.update_status(status=tweet)
         saved['strongest'][curr_strongest]=True
 
 
@@ -80,7 +80,7 @@ def tweeter():
             info_steps = df[df['netw']==i].net_info.values[0]
             tweet = 'LeelaZ - Promising network: '+info_winloss+'\nhash: '+ i +' ('+info_steps+')\nSee zero.sjeng.org'
             print(tweet)
-            #api.update_status(status=tweet)
+            api.update_status(status=tweet)
             saved['promising'][i]=True
 
     saved.to_csv('saved.csv')
