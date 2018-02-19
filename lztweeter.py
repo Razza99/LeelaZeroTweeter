@@ -4,7 +4,7 @@ import pandas as pd
 import time
 import tweepy
 
-n = 10            #only look at n most recent networks
+n = 20            #only look at n most recent networks
 minwin = 50
 minpct = 55
 waittime = 60     #redo as a cron job?
@@ -51,7 +51,7 @@ def tweeter():
 
     #Checking current strongest
 
-    curr_strongest = pd.read_html(str(best))[0].iloc[2,1]
+    curr_strongest = pd.read_html(str(best))[0].iloc[2,2]
 
     if curr_strongest not in saved.index:
         saved = saved.append(pd.DataFrame([[False,False]],columns=['promising','strongest'],index=[curr_strongest]))
