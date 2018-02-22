@@ -5,7 +5,7 @@ import time
 import tweepy
 
 n = 20            #only look at n most recent networks
-minwin = 50
+minwin = 20
 minpct = 55
 waittime = 60     #redo as a cron job?
 
