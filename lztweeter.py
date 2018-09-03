@@ -7,7 +7,7 @@ import tweepy
 n = 20            #only look at n most recent networks
 minwin = 20
 minpct = 55
-waittime = 60     #redo as a cron job?
+waittime = 60     #redone as a cron job
 
 # Create variables for each key, secret, token
 consumer_key = 
@@ -45,8 +45,8 @@ def tweeter():
 
     saved = pd.read_csv('saved.csv',index_col=0)
 
-    print('loaded saved.tail():')         #for testing, can remove
-    print(saved.tail())
+#     print('loaded saved.tail():')         #for testing, can remove
+#     print(saved.tail())
 
 
     #Checking current strongest
@@ -88,7 +88,7 @@ def tweeter():
     print('saved.tail() is currently:')       #for testing, can remove
     print(saved.tail())  
             
-while True:
+while True:  # Redone as a cron job when deployed
     tweeter()
     print('scraped at: '+time.ctime())
     time.sleep(waittime)
